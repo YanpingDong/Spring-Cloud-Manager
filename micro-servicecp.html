@@ -369,7 +369,7 @@
 			<script type="text/ng-template" id="serviceInfoTable.html">
 				<div class="modal-header">
 					<a class="close" ng-click="cancel()">×</a>
-            		<h3>Service info details</h3>
+            		<h3>Service info details {{serviceName}}</h3>
 				</div>
 			    <div class="modal-body">
 			
@@ -473,13 +473,13 @@
 						  </thead>
 						  <tbody>
 							<tr>
-								<td ng-init="serviceId="+{{123}}>parkme</td>
+								<td ng-init="serviceId='parkme'">parkme</td>
 								<td class="center">2012/01/01</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
 								<td class="center">
-									<a class="btn btn-success" href="#" ng-click="openServiceInfo('hahahah')">
+									<a class="btn btn-success" href="#" ng-click="openServiceInfo(serviceId)">
 										<i class="halflings-icon white zoom-in"></i>
 									</a>
 									<a   class="btn btn-info" href="#" ng-click="openPostJarFileForm()">
