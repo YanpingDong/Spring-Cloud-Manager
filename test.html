@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>Micro-Service</title>
+	<!--<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">-->
+	<!--<script src="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>-->
+    <link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+	<script src="http://cdn.bootcss.com/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.js"></script>
+</head>
+
+<body ng-app="myApp"  >
+	<dev class="row" >
+		<dev ng-controller="modalDemo" class="col-md-6" style="margin:40px auto; float:none; background:#fff; padding:30px;">
+
+        <script type="text/ng-template" id="myModelContent.htm">
+            <div class="modal-header">
+                <h3 class="modal-title">html5jq模态框</h3>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{item}}</a> //显示当前点击的item
+                    </li>
+                    当前选择： <b>{{selected.item}}</b>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">
+                确认
+                </button>
+                <button class="btn btn-warning" ng-click="cancel()">退出</button>
+            </div>
+	    </script>
+			<button class="btn btn-info" ng-click="open()">点我！</button>
+			<button class="btn btn-default" ng-click = "open('lg')">大模态</button>  //lg 大模态，sm小模态
+			<button class="btn btn-default" ng-click = "open('sm')">小模态</button>
+			<hr>
+		    <div ng-show="selected">当前选择：{{selected}}</div>
+		</dev>
+	</dev>
+</body>
+<script>
+	angular.module('myApp',['ui.bootstrap']).controller('modalDemo',function($scope,$modal,$log){ //
+		$scope.items = ['html5','jq','FE-演示平台'];
+		$scope.open = function(size){  //打开模态
+			var modalInstance = $modal.open({
+				templateUrl : 'myModelContent.htm',
+				controller : 'ModalInstanceCtrl',
+				size : size,
+				resolve : {
+					items : function(){
+						return $scope.items;
+					}
+				}
+			})
+			modalInstance.result.then(function(selectedItem){
+				$scope.selected = selectedItem;
+			},function(){
+				$log.info('Modal dismissed at: ' + new Date())
+			})
+		}
+	})
+	angular.module('myApp').controller('ModalInstanceCtrl',function($scope,$modalInstance,items){ //依赖于modalInstance
+		$scope.items = items;
+		$scope.selected = {
+			item : $scope.items[0]
+		};
+		$scope.ok = function(){
+			$modalInstance.close($scope.selected.item); //关闭并返回当前选项
+		};
+		$scope.cancel = function(){
+			$modalInstance.dismiss('cancel'); // 退出
+		}
+	})
+</script>
+</html>
