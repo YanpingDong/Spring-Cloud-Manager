@@ -1,12 +1,25 @@
 angular.module('microService', ['ngAnimate', 'ui.bootstrap']);
-angular.module('microService').controller('microServiceCtrl', function ($scope, $uibModal, $log) {
+
+angular.module('microService').config(function($httpProvider){
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+});
+
+angular.module('microService').controller('microServiceCtrl', function ($scope, $uibModal, $log, $http) {
+
+  $http.get("http://localhost:8000/api/service/info").success(function(data){
+  $scope.jarInfo = data;
+  })
+
+  $http.get("http://localhost:8000/api/running/service/info").success(function(data){
+  $scope.runningServiceInfo = data;
+  })
 
   $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.animationsEnabled = true;
 
   $scope.openPostJarFileForm = function (size) {
-
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'postJarFileTable.html',
@@ -24,9 +37,12 @@ angular.module('microService').controller('microServiceCtrl', function ($scope, 
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
+
+    $scope.toggleAnimation = function () {
+      $scope.animationsEnabled = !$scope.animationsEnabled;
+    };
   };
 
-  
   $scope.openServiceInfo = function (id) {
 
     var modalInstance = $uibModal.open({
@@ -40,21 +56,44 @@ angular.module('microService').controller('microServiceCtrl', function ($scope, 
         }
       }
     });
-
     modalInstance.result.then(function (selectedItem) {
       $scope.selected = selectedItem;
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
+
+    $scope.toggleAnimation = function () {
+      $scope.animationsEnabled = !$scope.animationsEnabled;
+    };
   };
 
-  $scope.toggleAnimation = function () {
-    $scope.animationsEnabled = !$scope.animationsEnabled;
+  $scope.openEnvServiceInfo = function (id) {
+
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'serviceEnvInfoTable.html',
+      controller: 'runningServiceEnvInfoTableCtrl',
+      size: 'lg',
+      resolve: {
+        serviceId: function () {
+          return id;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+
+    $scope.toggleAnimation = function () {
+      $scope.animationsEnabled = !$scope.animationsEnabled;
+    };
   };
 
-});
+});//---main ctrl end
 
-angular.module('microService').controller('postJarFileTableCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('microService').controller('postJarFileTableCtrl', function ($scope, $uibModalInstance,$http, items) {
 
   $scope.items = items;
   $scope.selected = {
@@ -70,7 +109,31 @@ angular.module('microService').controller('postJarFileTableCtrl', function ($sco
   };
 });
 
-angular.module('microService').controller('serviceInfoTableCtrl', function ($scope, $uibModalInstance, serviceId) {
+angular.module('microService').controller('serviceInfoTableCtrl', function ($scope, $uibModalInstance, $http, serviceId) {
+   url="http://localhost:8000/api/running/service/detail/info?id="+serviceId;
+  $http.get(url).success(function(data){
+  $scope.serviceDetailInfo = data;
+  })
+  $scope.testStr = serviceId;
+  $scope.serviceName = serviceId;
+  $scope.selected = {
+    serviceName: $scope.serviceName
+  };
+
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.serviceName);
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});
+
+angular.module('microService').controller('runningServiceEnvInfoTableCtrl', function ($scope, $uibModalInstance, $http, serviceId) {
+   url="http://localhost:8000/api/running/service/env/info?id="+serviceId;
+  $http.get(url).success(function(data){
+  $scope.runningServiceEnvInfo = data;
+  })
   $scope.testStr = serviceId;
   $scope.serviceName = serviceId;
   $scope.selected = {

@@ -43,7 +43,7 @@
 </head>
 
 <body>
-		<!-- start: Header -->
+	<!-- start: Header -->
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -327,11 +327,11 @@
 	</div>
 	<!-- start: Header -->
 	
-		<div class="container-fluid-full">
-		<div class="row-fluid">
+	<div class="container-fluid-full">
+	<div class="row-fluid">
 				
-			<!-- start: Main Menu -->
-			<div id="sidebar-left" class="span2">
+	<!-- start: Main Menu -->
+	<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
@@ -344,20 +344,20 @@
 					</ul>
 				</div>
 			</div>
-			<!-- end: Main Menu -->
+	<!-- end: Main Menu -->
 			
-			<noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
-			
-			<!-- start: Content -->
-			<div id="content" class="span10">
+	<noscript>
+		<div class="alert alert-block span10">
+			<h4 class="alert-heading">Warning!</h4>
+			<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+		</div>
+	</noscript>
 			
 			
-			<ul class="breadcrumb">
+	<!-- start: Content -->
+	<div id="content" class="span10">
+				
+	    <ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
 					<a href="index.html">Home</a> 
@@ -365,125 +365,73 @@
 				</li>
 				<li><a href="#">Tables</a></li>
 			</ul>
-
-			<div class="row-fluid sortable">
-				<div class="box span12" id="serviceJar">
-					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon user"></i><span class="break"></span>Service </h2>
-						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-						</div>
-					</div>
-					<div class="box-content">
-						<table class="table table-striped table-bordered bootstrap-datatable datatable">
-						  <thead>
-							  <tr>
-								  <th>Service Name</th>
-								  <th>Date registered</th>
-								  <th>Status</th>
-								  <th>Actions</th>
-							  </tr>
-						  </thead>
-						  <tbody>
-							<tr>
-								<td>Parkme</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#" data-toggle="modal" data-target="#service-info">
-										<i class="halflings-icon white zoom-in"></i>
-									</a>
-									<a   class="btn btn-info" href="#" data-toggle="modal"  data-target="#post-jar-file">
-										<i class="halflings-icon white edit"></i>
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="halflings-icon white trash"></i>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>RoviInfo</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#" data-toggle="modal" data-target="#service-info">
-										<i class="halflings-icon white zoom-in"></i>
-									</a>
-
-									<a   class="btn btn-info" href="#" data-toggle="modal"  data-target="#post-jar-file">
-										<i class="halflings-icon white edit"></i>
-									</a>
-
-									<a class="btn btn-danger" href="#">
-										<i class="halflings-icon white trash"></i>
-									</a>
-								</td>
-							</tr>
-						  </tbody>
-					  </table>
-					</div>
-				</div><!--/span-->
-
-			</div><!--/row-->
-
-			<div id="service-info" class="modal hide fade in" onTablet="span5" onDesktop="span6" role="dialog"  aria-hidden="false"> <!--/service info -->
+        <div ng-app="microService" ng-controller="microServiceCtrl">
+			<script type="text/ng-template" id="serviceInfoTable.html"> <!-- service info table template-->
 				<div class="modal-header">
-            		<a class="close" data-dismiss="modal">×</a>
-            		<h3>Service info</h3>
-        		</div>
-        		<div class="modal-body">
-        		    <div class="sparkLineStats span4 widget green" onTablet="span5" onDesktop="span4">
-                    
+					<a class="close" ng-click="cancel()">×</a>
+            		<h3>Service info details</h3>
+				</div>
+			    <div class="modal-body">
+				<div class="sparkLineStats span4 widget green" onTablet="span5" onDesktop="span4">
+                    <h3>{{serviceDetailInfo.info}}</h3>
+                </div><!-- End .sparkStats -->
+
+			    </div>
+			    <div class="modal-footer">
+				    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+				    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+			    </div>
+			</script>
+
+			<script type="text/ng-template" id="serviceEnvInfoTable.html"> <!-- service info table template-->
+				<div class="modal-header">
+					<a class="close" ng-click="cancel()">×</a>
+            		<h3>Service Running Env info </h3>
+				</div>
+			    <div class="modal-body">
+				<div class="sparkLineStats span4 widget green" onTablet="span5" onDesktop="span4">
+                    <h3>{{runningServiceEnvInfo.name}}</h3>
                     <ul class="unstyled">
-                        
                         <li><span class="sparkLineStats3"></span> 
-                            Pageviews:
-                            <span class="number">781</span>
+                            uploadTime:
+                            <span class="number">{{runningServiceEnvInfo.uploadTime}}</span>
                         </li>
                         <li><span class="sparkLineStats4"></span>
-                            Pages / Visit: 
-                            <span class="number">2,19</span>
+                            cup cost:
+                            <span class="number">{{runningServiceEnvInfo.cupCost}}</span>
                         </li>
                         <li><span class="sparkLineStats5"></span>
-                            Avg. Visit Duration: 
-                            <span class="number">00:02:58</span>
+                            cup cost::
+                            <span class="number">{{runningServiceEnvInfo.memCost}}</span>
                         </li>
                         <li><span class="sparkLineStats6"></span>
-                            Bounce Rate: <span class="number">59,83%</span>
+                            hard disk cost:
+							<span class="number">{{runningServiceEnvInfo.hardDiskCost}}</span>
                         </li>
                         <li><span class="sparkLineStats7"></span>
-                            % New Visits: 
-                            <span class="number">70,79%</span>
+                            web io cost:
+                            <span class="number">{{runningServiceEnvInfo.webIOCost}}</span>
                         </li>
-                        <li><span class="sparkLineStats8"></span>
-                            % Returning Visitor: 
-                            <span class="number">29,21%</span>
-                        </li>
-
                     </ul>
 					
 					<div class="clearfix"></div>
 
-                    </div><!-- End .sparkStats -->
-        		</div>
-        		<div class="modal-footer">
-           			 <a href="#" class="btn" data-dismiss="modal">关闭</a>
-        		</div>
-			</div>
+                </div><!-- End .sparkStats -->
 
-			<div id="post-jar-file" class="modal hide fade in"  role="dialog"  aria-hidden="false"> <!--/post jar form  -->
+			    </div>
+			    <div class="modal-footer">
+				    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+				    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+			    </div>
+			</script>
+
+			<script type="text/ng-template" id="postJarFileTable.html"> <!-- post jar file table template-->
 				<div class="modal-header">
-            		<a class="close" data-dismiss="modal">×</a>
-            		<h3>Please set deployment info</h3>
-        		</div>
-        		<div class="modal-body">
-					<form class="form-horizontal">
+					<a class="close" ng-click="cancel()">×</a>
+            		<h3>Service info details</h3>
+				</div>
+			    <div class="modal-body">
+				   <form class="form-horizontal">
 					  <div class="control-group">
 						<label class="control-label" for="inputHost">Host</label>
 						<div class="controls">
@@ -508,114 +456,17 @@
 						</div>
 					  </div>
 					</form>
-        		</div>
-        		<div class="modal-footer">
-           			 <a href="#" class="btn" data-dismiss="modal">关闭</a>
-        		</div>
-			</div>
+			    </div>
+			    <div class="modal-footer">
+				    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+				    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+			    </div>
+			</script>
 
-            <div id="service-monitor-info" class="modal hide fade in" onTablet="span5" onDesktop="span8" role="dialog"  aria-hidden="true"> <!--/service monitor info  -->
-				<div class="modal-header">
-            		<a class="close" data-dismiss="modal">×</a>
-            		<h3>monitor info</h3>
-        		</div>
-        		<div class="modal-body ">
-					<div class="row-fluid hideInIE8 circleStats">
-						<div class="span2 " onTablet="span4" onDesktop="span2">
-							<div class="circleStatsItemBox yellow">
-								<div class="header">Disk Space Usage</div>
-								<span class="percent">percent</span>
-								<div class="circleStat">
-									<input type="text" value="58" class="whiteCircle" />
-								</div>
-								<div class="footer">
-									<span class="count">
-										<span class="number">20000</span>
-										<span class="unit">MB</span>
-									</span>
-									<span class="sep"> / </span>
-									<span class="value">
-										<span class="number">50000</span>
-										<span class="unit">MB</span>
-									</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="span2" onTablet="span4" onDesktop="span2">
-							<div class="circleStatsItemBox green">
-								<div class="header">Bandwidth</div>
-								<span class="percent">percent</span>
-								<div class="circleStat">
-									<input type="text" value="78" class="whiteCircle" />
-								</div>
-								<div class="footer">
-									<span class="count">
-										<span class="number">5000</span>
-										<span class="unit">GB</span>
-									</span>
-									<span class="sep"> / </span>
-									<span class="value">
-										<span class="number">5000</span>
-										<span class="unit">GB</span>
-									</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="span2" onTablet="span4" onDesktop="span2">
-							<div class="circleStatsItemBox greenDark">
-								<div class="header">Memory</div>
-								<span class="percent">percent</span>
-								<div class="circleStat">
-									<input type="text" value="100" class="whiteCircle" />
-								</div>
-								<div class="footer">
-									<span class="count">
-										<span class="number">64</span>
-										<span class="unit">GB</span>
-									</span>
-									<span class="sep"> / </span>
-									<span class="value">
-										<span class="number">64</span>
-										<span class="unit">GB</span>
-									</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="span2" onTablet="span4" onDesktop="span2">
-							<div class="circleStatsItemBox pink">
-								<div class="header">CPU</div>
-								<span class="percent">percent</span>
-								<div class="circleStat">
-									<input type="text" value="83" class="whiteCircle" />
-								</div>
-								<div class="footer">
-									<span class="count">
-										<span class="number">64</span>
-										<span class="unit">GHz</span>
-									</span>
-									<span class="sep"> / </span>
-									<span class="value">
-										<span class="number">3.2</span>
-										<span class="unit">GHz</span>
-									</span>
-								</div>
-							</div>
-						</div>
-
-			        </div>
-        		</div>
-        		<div class="modal-footer">
-           			 <a href="#" class="btn" data-dismiss="modal">关闭</a>
-        		</div>
-			</div>
-
-			<div class="row-fluid sortable">
-				<div class="box span12">
+			<div class="row-fluid sortable"> <!--/service jar info table -->
+				<div class="box span12" id="serviceJarInfoTable">
 					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon user"></i><span class="break"></span>Current Service</h2>
+						<h2><i class="halflings-icon user"></i><span class="break"></span>Stored Service </h2>
 						<div class="box-icon">
 							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -626,45 +477,66 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>Username</th>
-								  <th>Date registered</th>
-								  <th>Role</th>
+								  <th>Service Name</th>
+								  <th>Upload Date</th>
+								  <th>Description</th>
+								  <th>Actions</th>
+							  </tr>
+						  </thead>
+						  <tbody ng-repeat='info in jarInfo'>
+						      <tr>
+								<td>{{info.name}}</td>
+								<td class="center">{{info.uploadTime}}</td>
+								<td class="center">
+									<span class="label label-success">{{info.description}}</span>
+								</td>
+								<td class="center">
+									<a class="btn btn-success" href="#" ng-click="openServiceInfo(info.id)">
+										<i class="halflings-icon white zoom-in"></i>
+									</a>
+									<a   class="btn btn-info" href="#" ng-click="openPostJarFileForm()">
+										<i class="halflings-icon white edit"></i>
+									</a>
+									<a class="btn btn-danger" href="#">
+										<i class="halflings-icon white trash"></i>
+									</a>
+								</td>
+							</tr>
+						  </tbody>
+					    </table>
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+			<div class="row-fluid sortable"> <!--/monitor table -->
+				<div class="box span12">
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon user"></i><span class="break"></span>Running Service</h2>
+						<div class="box-icon">
+							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable">
+						  <thead>
+							  <tr>
+								  <th>Service Nane</th>
+								  <th>Date Registered</th>
 								  <th>Status</th>
 								  <th>Actions</th>
 							  </tr>
 						  </thead>   
-						  <tbody>
+						  <tbody ng-repeat='rServiceInfo in runningServiceInfo'>
 							<tr>
-								<td>Hu Zhiyuan</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Member</td>
+								<td>{{rServiceInfo.name}}</td>
+								<td class="center">{{rServiceInfo.registeredDate}}</td>
 								<td class="center">
-									<span class="label label-success">Active</span>
+									<span class="label {{rServiceInfo.status=='up' ? ' label-success': ' label-important'}}">{{rServiceInfo.status}}</span>
 								</td>
 								<td class="center">
-									<a class="btn btn-success" href="#" data-toggle="modal" data-target="#service-monitor-info">
-										<i class="halflings-icon white zoom-in"></i>
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="halflings-icon white play"></i>
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="halflings-icon white stop"></i>
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="halflings-icon white trash"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Hu Zhiyuan</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Member</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
+									<a class="btn btn-success" href="#" ng-click="openEnvServiceInfo(rServiceInfo.id)">
 										<i class="halflings-icon white zoom-in"></i>  
 									</a>
 									<a class="btn btn-info" href="#">
@@ -682,17 +554,15 @@
 					  </table>            
 					</div>
 				</div><!--/span-->
-			
 			</div><!--/row-->
-
-
-    
+        
+		</div>
 
 	</div><!--/.fluid-container-->
 	
-			<!-- end: Content -->
-		</div><!--/#content.span10-->
-		</div><!--/fluid-row-->
+	<!-- end: Content -->
+	</div><!--/#content.span10-->
+	</div><!--/fluid-row-->
 		
 	<div class="modal hide fade" id="myModal">
 		<div class="modal-header">
@@ -721,64 +591,67 @@
 	
 	<!-- start: JavaScript-->
 
-		<script src="js/jquery-1.9.1.min.js"></script>
-		<script src="js/jquery-migrate-1.0.0.min.js"></script>
-	
-		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
-	
-		<script src="js/jquery.ui.touch-punch.js"></script>
-	
-		<script src="js/modernizr.js"></script>
-	
-		<script src="js/bootstrap.min.js"></script>
-	
-		<script src="js/jquery.cookie.js"></script>
-	
-		<script src='js/fullcalendar.min.js'></script>
-	
-		<script src='js/jquery.dataTables.min.js'></script>
+	<script src="js/jquery-1.9.1.min.js"></script>
 
-		<script src="js/excanvas.js"></script>
-		<script src="js/jquery.flot.js"></script>
-		<script src="js/jquery.flot.pie.js"></script>
-		<script src="js/jquery.flot.stack.js"></script>
-		<script src="js/jquery.flot.resize.min.js"></script>
-	
-		<script src="js/jquery.chosen.min.js"></script>
-	
-		<script src="js/jquery.uniform.min.js"></script>
-		
-		<script src="js/jquery.cleditor.min.js"></script>
-	
-		<script src="js/jquery.noty.js"></script>
-	
-		<script src="js/jquery.elfinder.min.js"></script>
-	
-		<script src="js/jquery.raty.min.js"></script>
-	
-		<script src="js/jquery.iphone.toggle.js"></script>
-	
-		<script src="js/jquery.uploadify-3.1.min.js"></script>
-	
-		<script src="js/jquery.gritter.min.js"></script>
-	
-		<script src="js/jquery.imagesloaded.js"></script>
-	
-		<script src="js/jquery.masonry.min.js"></script>
-	
-		<script src="js/jquery.knob.modified.js"></script>
-	
-		<script src="js/jquery.sparkline.min.js"></script>
-	
-		<script src="js/counter.js"></script>
-	
-		<script src="js/retina.js"></script>
+	<script src="js/jquery-migrate-1.0.0.min.js"></script>
 
-		<script src="js/custom.js"></script>
-		<script src="js/angular-1.4.7.js"></script>
-		<script src="js/angular-animate-1.4.7.js"></script>
-		<script src="js/ui-bootstrap-tpls-1.0.0.min.js"></script>
-		<!-- end: JavaScript-->
+	<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+
+	<script src="js/jquery.ui.touch-punch.js"></script>
+
+	<script src="js/modernizr.js"></script>
+
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="js/jquery.cookie.js"></script>
+
+	<script src='js/fullcalendar.min.js'></script>
+
+	<script src='js/jquery.dataTables.min.js'></script>
+
+	<script src="js/excanvas.js"></script>
+	<script src="js/jquery.flot.js"></script>
+	<script src="js/jquery.flot.pie.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+
+	<script src="js/jquery.chosen.min.js"></script>
+
+	<script src="js/jquery.uniform.min.js"></script>
+	
+	<script src="js/jquery.cleditor.min.js"></script>
+
+	<script src="js/jquery.noty.js"></script>
+
+	<script src="js/jquery.elfinder.min.js"></script>
+
+	<script src="js/jquery.raty.min.js"></script>
+
+	<script src="js/jquery.iphone.toggle.js"></script>
+
+	<script src="js/jquery.uploadify-3.1.min.js"></script>
+
+	<script src="js/jquery.gritter.min.js"></script>
+
+	<script src="js/jquery.imagesloaded.js"></script>
+
+	<script src="js/jquery.masonry.min.js"></script>
+
+	<script src="js/jquery.knob.modified.js"></script>
+
+	<script src="js/jquery.sparkline.min.js"></script>
+
+	<script src="js/counter.js"></script>
+
+	<script src="js/retina.js"></script>
+
+<script src="js/custom.js"></script>
+	<script src="js/angular-1.4.7.js"></script>
+	<script src="js/angular-animate-1.4.7.js"></script>
+	<script src="js/ui-bootstrap-tpls-1.0.0.min.js"></script>
+	<script src="micro-service.js"></script>
+
+	<!-- end: JavaScript-->
 	
 </body>
 </html>

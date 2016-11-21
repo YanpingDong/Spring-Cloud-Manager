@@ -366,24 +366,14 @@
 				<li><a href="#">Messages</a></li>
 			</ul>
 
-			<div class="row-fluid">
+			<div class="row-fluid"  ng-app="messages" ng-controller="messagesCtrl">
 				
 				<div class="span7">
 					<h1>Inbox</h1>
 					
 					<ul class="messagesList">
-						
 						<li>
-							<span class="from"><span class="glyphicons star"><i></i></span> Dennis Ji <span class="glyphicons paperclip"><i></i></span></span><span class="title"><span class="label label-warning">problem</span> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</span><span class="date">Today, <b>3:47 PM</b></span>
-						</li>
-						<li>
-							<span class="from"><span class="glyphicons dislikes"><i></i></span> Dennis Ji</span><span class="title">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</span><span class="date">Today, <b>3:47 PM</b></span>
-						</li>
-						<li>
-							<span class="from"><span class="glyphicons dislikes"><i></i></span> Dennis Ji</span><span class="title">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</span><span class="date">Today, <b>3:47 PM</b></span>
-						</li>
-						<li>
-							<span class="from"><span class="glyphicons star"><i></i></span> Dennis Ji <span class="glyphicons paperclip"><i></i></span></span><span class="title"><span class="label label-success">task</span> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</span><span class="date">Today, <b>3:47 PM</b></span>
+							<span class="from"> Dennis Ji <span class="glyphicons paperclip"><i></i></span></span><span class="title"><span class="label label-success">update</span> some inof.</span><span class="date"><b>Time 3:47 PM</b></span>
 						</li>
 					</ul>
 						
@@ -442,20 +432,7 @@
 							</ul>		
 						</div>
 						
-						<form class="replyForm"method="post" action="">
 
-							<fieldset>
-								<textarea tabindex="3" class="input-xlarge span12" id="message" name="body" rows="12" placeholder="Click here to reply"></textarea>
-
-								<div class="actions">
-									
-									<button tabindex="3" type="submit" class="btn btn-success">Send message</button>
-									
-								</div>
-
-							</fieldset>
-
-						</form>	
 						
 					</div>	
 					
@@ -499,7 +476,7 @@
 	<!-- start: JavaScript-->
 
 		<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="js/jquery-migrate-1.0.0.min.js"></script>
+		<script src="js/jquery-migrate-1.0.0.min.js"></script>
 	
 		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
 	
@@ -516,10 +493,10 @@
 		<script src='js/jquery.dataTables.min.js'></script>
 
 		<script src="js/excanvas.js"></script>
-	<script src="js/jquery.flot.js"></script>
-	<script src="js/jquery.flot.pie.js"></script>
-	<script src="js/jquery.flot.stack.js"></script>
-	<script src="js/jquery.flot.resize.min.js"></script>
+		<script src="js/jquery.flot.js"></script>
+		<script src="js/jquery.flot.pie.js"></script>
+		<script src="js/jquery.flot.stack.js"></script>
+		<script src="js/jquery.flot.resize.min.js"></script>
 	
 		<script src="js/jquery.chosen.min.js"></script>
 	
@@ -555,6 +532,7 @@
 		<script src="js/angular-1.4.7.js"></script>
 		<script src="js/angular-animate-1.4.7.js"></script>
 		<script src="js/ui-bootstrap-tpls-1.0.0.min.js"></script>
+		<script src="micro-service.js"></script>
 		<!-- end: JavaScript-->
 	
 </body>
