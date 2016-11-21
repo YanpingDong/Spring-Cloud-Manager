@@ -380,7 +380,8 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="http://localhost:8000/api/upload" method="POST">
+						<!--<form class="form-horizontal" action="http://10.120.137.175:5000/service/upload" method="post" enctype="multipart/form-data">-->
+						<form class="form-horizontal" ng-app="uploadService" ng-controller="uploadServiceCtrl">
 						  <fieldset>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Name </label>
@@ -399,14 +400,21 @@
 							<div class="control-group">
 							  <label class="control-label" for="fileInput">Jar file </label>
 							  <div class="controls">
-								<input class="input-file uniform_on" id="fileInput" type="file">
+								<input  ng-model="formData.file" class="input-file uniform_on" name="file" id="fileInput" type="file">
 							  </div>
 							</div>
 
 							<div class="control-group">
 							  <label class="control-label" for="versionInput">Version </label>
 							  <div class="controls">
-								<input class="input-file uniform_on" id="versionInput" type="text">
+								<input class="span6 typeahead" name="version" id="versionInput" type="text">
+							  </div>
+							</div>
+
+							<div class="control-group">
+							  <label class="control-label" for="userIdInput">UserId </label>
+							  <div class="controls">
+								<input class="span6 typeahead" name="userId" id="userIdInput" type="text">
 							  </div>
 							</div>
 
@@ -417,6 +425,7 @@
 							  </div>
 							</div>
 							<div class="form-actions">
+							  <button ng-click="save()" >save</button>
 							  <button type="submit" class="btn btn-primary">Upload</button>
 							  <button type="reset" class="btn">Cancel</button>
 							</div>
@@ -519,6 +528,7 @@
 		<script src="js/angular-1.4.7.js"></script>
 		<script src="js/angular-animate-1.4.7.js"></script>
 		<script src="js/ui-bootstrap-tpls-1.0.0.min.js"></script>
+		<script src="upload-service.js"></script>
 	<!-- end: JavaScript-->
 	
 </body>

@@ -7,4 +7,5 @@ angular.module('messages').config(function($httpProvider){
 
 angular.module('messages').controller('messagesCtrl', function ($scope, $uibModal, $log, $http) {
 
+
 });//---main ctrl end
