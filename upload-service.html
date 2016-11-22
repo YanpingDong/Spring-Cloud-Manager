@@ -386,47 +386,47 @@
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Name </label>
 							  <div class="controls">
-								<input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+								<input ng-model="name" type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
 								<p class="help-block">Start typing to activate auto complete!</p>
 							  </div>
 							</div>
 							<div class="control-group">
 							  <label class="control-label" for="date">Upload date</label>
 							  <div class="controls">
-								<input type="text" class="input-xlarge datepicker" id="date" value="02/16/12">
+								<input type="text" class="input-xlarge datepicker" id="date" value="11/22/2016">
 							  </div>
 							</div>
 
 							<div class="control-group">
 							  <label class="control-label" for="fileInput">Jar file </label>
 							  <div class="controls">
-								<input  ng-model="formData.file" class="input-file uniform_on" name="file" id="fileInput" type="file">
+								<input class="input-file uniform_on" name="file" id="fileInput" type="file">
 							  </div>
 							</div>
 
 							<div class="control-group">
 							  <label class="control-label" for="versionInput">Version </label>
 							  <div class="controls">
-								<input class="span6 typeahead" name="version" id="versionInput" type="text">
+								<input ng-model="version" class="span6 typeahead" name="version" id="versionInput" type="text">
 							  </div>
 							</div>
 
 							<div class="control-group">
 							  <label class="control-label" for="userIdInput">UserId </label>
 							  <div class="controls">
-								<input class="span6 typeahead" name="userId" id="userIdInput" type="text">
+								<input ng-model="userId" class="span6 typeahead" name="userId" id="userIdInput" type="text">
 							  </div>
 							</div>
 
 							<div class="control-group hidden-phone">
 							  <label class="control-label" for="textarea">Description</label>
 							  <div class="controls">
-								<textarea class="cleditor" id="textarea" rows="3"></textarea>
+								<textarea  class="cleditor" id="textarea" rows="3"></textarea>
 							  </div>
 							</div>
 							<div class="form-actions">
-							  <button ng-click="save()" >save</button>
-							  <button type="submit" class="btn btn-primary">Upload</button>
+							  <button ng-click="save()" class="btn btn-primary">Upload</button>
+							  <!--<button type="submit" class="btn btn-primary">Upload</button>-->
 							  <button type="reset" class="btn">Cancel</button>
 							</div>
 						  </fieldset>

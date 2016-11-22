@@ -110,7 +110,7 @@ angular.module('microService').controller('postJarFileTableCtrl', function ($sco
 });
 
 angular.module('microService').controller('serviceInfoTableCtrl', function ($scope, $uibModalInstance, $http, serviceId) {
-   url="http://localhost:8000/api/running/service/detail/info?id="+serviceId;
+  url="http://localhost:8000/api/running/service/detail/info?id="+serviceId;
   $http.get(url).success(function(data){
   $scope.serviceDetailInfo = data;
   })
