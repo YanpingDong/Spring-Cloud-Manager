@@ -381,7 +381,7 @@
 					</div>
 					<div class="box-content">
 						<!--<form class="form-horizontal" action="http://10.120.137.175:5000/service/upload" method="post" enctype="multipart/form-data">-->
-						<form class="form-horizontal" ng-app="uploadService" ng-controller="uploadServiceCtrl">
+						<form id="uploadJarForm" class="form-horizontal" ng-app="uploadService" ng-controller="uploadServiceCtrl">
 						  <fieldset>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Name </label>
@@ -427,7 +427,7 @@
 							<div class="form-actions">
 							  <button ng-click="save()" class="btn btn-primary">Upload</button>
 							  <!--<button type="submit" class="btn btn-primary">Upload</button>-->
-							  <button type="reset" class="btn">Cancel</button>
+							  <button type="reset" class="btn red">Cancel</button>
 							</div>
 						  </fieldset>
 						</form>
@@ -523,7 +523,7 @@
 	<script src="js/counter.js"></script>
 
 	<script src="js/retina.js"></script>
-
+    <script src="js/angular-route.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/angular-1.4.7.js"></script>
 	<script src="js/angular-animate-1.4.7.js"></script>
