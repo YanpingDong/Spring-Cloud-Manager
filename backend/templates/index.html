@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+<meta charset="utf-8" />
+
+<title>apis</title>
+
+</head>
+
+<body>
+
+</p>
+--------------------------------------------------------------------------------------</p>
+user register
+<form action="/user/register" method="post" enctype="multipart/form-data">
+    name <input type="text" name="name" value="Zhiyuan Hu"/><br />
+    email <input type="text" name="email" value="1083401149@qq.com"/><br />
+    <input type="submit" value="submit" />
+</form>
+</p>
+</p>
+--------------------------------------------------------------------------------------</p>
+upload file
+<form action="/service/upload" method="post" enctype="multipart/form-data">
+    file <input type="file" name="file" /><br />
+    userId <input type="text" name="userId" value="123456"/><br />
+    date <input type="text" name="date" value="2016-11-11"/><br />
+    version <input type="text" name="version" value="v1.0.0"/><br />
+    description <input type="text" name="description" value="this version is for fixing bugs:xx,xx,xxx,xxxx"/><br />
+    <input type="submit" value="submit upload" />
+</form>
+</p>
+</p>
+--------------------------------------------------------------------------------------</p>
+get message api</p>
+/message/get --method:get
+<form action="/message/get" method="get">
+    <input type="submit" value="get message" />
+</form>
+</p>
+</p>
+--------------------------------------------------------------------------------------</p>
+get services status</p>
+/service/list?</p> --method:post
+<form action="/service/list" method="post" enctype="multipart/form-data">
+   host <input type="text" name="host" value="10.120.137.207"/><br />
+   userName <input type="text" name="username" value="hzy"/><br />
+   password <input type="text" name="password" value="saber"/><br />
+   jarLocation <input type="text" name="jarLocation" value="/home/hzy/hzy/3rd-party-service/jars"/><br />
+    command <input type="text" name="command" value="status"/><br />
+    <input type="submit" value="get service status" />
+</form>
+</p>
+</p>
+--------------------------------------------------------------------------------------</p>
+get services list</p>
+/service/list? </p>
+--method:get
+<form action="/service/list" method="get">
+    <input type="submit" value="get local services info" />
+</form>
+</p>
+</p>
+--------------------------------------------------------------------------------------</p>
+service start|stop|status</p>
+/service/status?</p> --method:get
+<form action="/service/operate" method="post" enctype="multipart/form-data">
+    userId <input type="text" name="userId" value="111111"/><br />
+   host <input type="text" name="host" value="10.120.137.207"/><br />
+   userName <input type="text" name="username" value="hzy"/><br />
+   password <input type="text" name="password" value="saber"/><br />
+   jarLocation <input type="text" name="jarLocation" value="/home/hzy/hzy/3rd-party-service/jars"/><br />
+    command <input type="text" name="command" value="status"/><br />
+    <input type="submit" value="get service status" />
+</form>
+</p>
+</p>
+--------------------------------------------------------------------------------------</p>
+system top</p>
+/system/top? </p>--method:post
+<form action="/system/top" method="post" enctype="multipart/form-data">
+    userId <input type="text" name="userId" value="111111"/><br />
+   host <input type="text" name="host" value="10.120.137.207"/><br />
+   userName <input type="text" name="username" value="hzy"/><br />
+   password <input type="text" name="password" value="saber"/><br />
+    command <input type="text" name="command" value="top"/><br />
+    <input type="submit" value="get service status" />
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
