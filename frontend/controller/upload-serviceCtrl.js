@@ -1,7 +1,6 @@
 
 app.controller('uploadServiceCtrl', function ($scope, $uibModal, $log, $http, $location) {
     $scope.save = function() {
-//          $state.go('/messages.html',{data: 'aaa'});
           var formData = new FormData();
           var file = document.querySelector('input[type=file]').files[0];
           var name = $scope.name;

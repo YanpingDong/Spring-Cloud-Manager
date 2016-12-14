@@ -1,10 +1,10 @@
 app.controller('microServiceCtrl', function ($scope, $uibModal, $log, $http) {
 
-  $http.get("http://localhost:8000/api/service/info").success(function(data){
+  $http.get(host+"/api/service/info").success(function(data){
   $scope.jarInfo = data;
   })
 
-  $http.get("http://localhost:8000/api/running/service/info").success(function(data){
+  $http.get(host+"/api/running/service/info").success(function(data){
   $scope.runningServiceInfo = data;
   })
 
@@ -103,7 +103,7 @@ app.controller('postJarFileTableCtrl', function ($scope, $uibModalInstance,$http
 });
 
 app.controller('serviceInfoTableCtrl', function ($scope, $uibModalInstance, $http, serviceId) {
-  url="http://localhost:8000/api/running/service/detail/info?id="+serviceId;
+  url=host+"/api/running/service/detail/info?id="+serviceId;
   $http.get(url).success(function(data){
   $scope.serviceDetailInfo = data;
   })
@@ -123,7 +123,7 @@ app.controller('serviceInfoTableCtrl', function ($scope, $uibModalInstance, $htt
 });
 
 app.controller('runningServiceEnvInfoTableCtrl', function ($scope, $uibModalInstance, $http, serviceId) {
-   url="http://localhost:8000/api/running/service/env/info?id="+serviceId;
+   url=host+"/api/running/service/env/info?id="+serviceId;
   $http.get(url).success(function(data){
   $scope.runningServiceEnvInfo = data;
   })
