@@ -8,8 +8,6 @@ app.controller('microServiceCtrl', function ($scope, $uibModal, $log, $http) {
   $scope.runningServiceInfo = data;
   })
 
-  $scope.items = ['item1', 'item2', 'item3'];
-
   $scope.animationsEnabled = true;
 
   $scope.openPostJarFileForm = function (size) {

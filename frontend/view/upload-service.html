@@ -2,12 +2,12 @@
 <ul class="breadcrumb">
 	<li>
 		<i class="icon-home"></i>
-		<a href="index.html">Home</a>
+		<a ui-sref="dashboard">Home</a>
 		<i class="icon-angle-right"></i>
 	</li>
 	<li>
 		<i class="icon-edit"></i>
-		<a href="#">Forms</a>
+		<a ui-sref="uploadService">UploadService</a>
 	</li>
 </ul>
 			
@@ -23,7 +23,7 @@
 		</div>
 		<div class="box-content">
 			<!--<form class="form-horizontal" action="http://10.120.137.175:5000/service/upload" method="post" enctype="multipart/form-data">-->
-			<form id="uploadJarForm" class="form-horizontal" ng-app="uploadService" ng-controller="uploadServiceCtrl">
+			<form id="uploadJarForm" class="form-horizontal"  ng-controller="uploadServiceCtrl">
 			  <fieldset>
 				<div class="control-group">
 				  <label class="control-label" for="typeahead">Name </label>

@@ -2,10 +2,13 @@
 <ul class="breadcrumb">
 	<li>
 		<i class="icon-home"></i>
-		<a href="index.html">Home</a>
+		<a ui-sref=="dashboard">Home</a>
 		<i class="icon-angle-right"></i>
 	</li>
-	<li><a href="#">Messages</a></li>
+	<li>
+		<i class="icon-envelope"></i>
+		<a ui-sref="messages">Messages</a>
+	</li>
 </ul>
 
 <div class="row-fluid" ng-controller="messagesCtrl">
