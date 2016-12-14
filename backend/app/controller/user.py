@@ -22,6 +22,8 @@ MESSAGE_PATH=UPLOAD_FOLDER+'/message.txt'
 def register():
     name = request.form.get("name")
     email=request.form.get("email")
+    password=request.form.get("password")
+    phone=request.form.get("phone")
 
     name_pattern = re.match("[a-zA-Z0-9 _]*",name)
     if name_pattern is None:
