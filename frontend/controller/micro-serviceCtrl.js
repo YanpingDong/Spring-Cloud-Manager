@@ -1,28 +1,22 @@
 app.controller('microServiceCtrl', function ($scope, $uibModal, $log, $http) {
 
   $http.get(host+"/api/service/info").success(function(data){
-  $scope.jarInfo = data;
+    $scope.jarInfo = data;
   })
 
   $http.get(host+"/api/running/service/info").success(function(data){
-  $scope.runningServiceInfo = data;
+    $scope.runningServiceInfo = data;
   })
 
   $scope.animationsEnabled = true;
 
-  $scope.openPostJarFileForm = function (size) {
+  $scope.openPostJarFileForm = function () {
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'postJarFileTable.html',
       controller: 'postJarFileTableCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
+      size: 'lg'
     });
-
     modalInstance.result.then(function (selectedItem) {
       $scope.selected = selectedItem;
     }, function () {
@@ -84,12 +78,7 @@ app.controller('microServiceCtrl', function ($scope, $uibModal, $log, $http) {
 
 });//---main ctrl end
 
-app.controller('postJarFileTableCtrl', function ($scope, $uibModalInstance,$http, items) {
-
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+app.controller('postJarFileTableCtrl', function ($scope, $uibModalInstance, $http) {
 
   $scope.ok = function () {
     $uibModalInstance.close($scope.selected.item);
