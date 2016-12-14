@@ -1,0 +1,163 @@
+<!-- start: Content -->
+    <ul class="breadcrumb">
+    <li>
+        <i class="icon-home"></i>
+        <a href="#dashboard">Home</a>
+        <i class="icon-angle-right"></i>
+    </li>
+    <li><a href="#dashboard">Dashboard</a></li>
+</ul>
+
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <dl class="dl-horizontal">
+                <dt>
+                    Description lists
+                </dt>
+                <dd>
+                    A description list is perfect for defining terms.
+                </dd>
+                <dt>
+                    Euismod
+                </dt>
+                <dd>
+                    Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+                </dd>
+                <dd>
+                    Donec id elit non mi porta gravida at eget metus.
+                </dd>
+                <dt>
+                    Malesuada porta
+                </dt>
+                <dd>
+                    Etiam porta sem malesuada magna mollis euismod.
+                </dd>
+                <dt>
+                    Felis euismod semper eget lacinia
+                </dt>
+                <dd>
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+    <div ng-controller="dashboardCtrl" class="row-fluid hideInIE8 circleStats">
+
+        <div class="sparkLineStats span3 widget pink" onTablet="span4" onDesktop="span3">
+            <h3>CPU info</h3>
+            <ul class="unstyled">
+                <li><span class="sparkLineStats3"></span>
+                    uploadTime:
+                    <span class="number" ng-model="mem.rate">{{mem.rate}}</span>
+                </li>
+                <li><span class="sparkLineStats4"></span>
+                    cup cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats5"></span>
+                    cup cost::
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats6"></span>
+                    hard disk cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats7"></span>
+                    web io cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div><!-- End .sparkStats -->
+
+        <div class="sparkLineStats span3 widget green" onTablet="span4" onDesktop="span3">
+            <h3>Memory info</h3>
+            <ul class="unstyled">
+                <li><span class="sparkLineStats3"></span>
+                    uploadTime:
+                    <span class="number">{{mem.rate}}</span>
+                </li>
+                <li><span class="sparkLineStats4"></span>
+                    cup cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats5"></span>
+                    cup cost::
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats6"></span>
+                    hard disk cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats7"></span>
+                    web io cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+
+        </div><!-- End .sparkStats -->
+
+        <div class="sparkLineStats span3 widget orange" onTablet="span4" onDesktop="span3">
+            <h3>Disk info</h3>
+            <ul class="unstyled">
+                <li><span class="sparkLineStats3"></span>
+                    uploadTime:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats4"></span>
+                    cup cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats5"></span>
+                    cup cost::
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats6"></span>
+                    hard disk cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats7"></span>
+                    web io cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+        </div><!-- End .sparkStats -->
+
+        <div class="sparkLineStats span3 widget yellow" onTablet="span4" onDesktop="span3">
+            <h3>WEB IO info</h3>
+            <ul class="unstyled">
+                <li><span class="sparkLineStats3"></span>
+                    uploadTime:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats4"></span>
+                    cup cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats5"></span>
+                    cup cost::
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats6"></span>
+                    hard disk cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+                <li><span class="sparkLineStats7"></span>
+                    web io cost:
+                    <span class="number">{{mem.used}}</span>
+                </li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+        </div><!-- End .sparkStats -->
+
+</div>
+<!-- end: Content -->

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
 	<title>Spring-Cloud-Manager</title>
 	<meta name="description" content="Spring-Cloud-Manager">
-	<meta name="author" content="HuZhiYan&DongYanping">
+	<meta name="author" content="HuZhiYuan&DongYanping">
 	<meta name="keyword" content="Spring,Spring Cloud UI, Dashboard, Bootstrap, Admin, Manager, Theme, Responsive, Fluid, Retina">
 	<!-- end: Meta -->
 
@@ -36,12 +35,10 @@
 	<!-- start: Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
-
-
 </head>
 
-<body>
-		<!-- start: Header -->
+<body ng-app="SpringCloudManager">
+    <!-- start: Header -->
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -50,567 +47,45 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>SpringCloudManager</span></a>
-								
-				<!-- start: Header Menu -->
-				<div class="nav-no-collapse header-nav">
-					<ul class="nav pull-right">
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white warning-sign"></i>
-							</a>
-							<ul class="dropdown-menu notifications">
-								<li class="dropdown-menu-title">
- 									<span>You have 11 notifications</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>	
-                            	<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">1 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">7 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">8 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">16 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">36 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon yellow"><i class="icon-shopping-cart"></i></span>
-										<span class="message">2 items sold</span>
-										<span class="time">1 hour</span> 
-                                    </a>
-                                </li>
-								<li class="warning">
-                                    <a href="#">
-										<span class="icon red"><i class="icon-user"></i></span>
-										<span class="message">User deleted account</span>
-										<span class="time">2 hour</span> 
-                                    </a>
-                                </li>
-								<li class="warning">
-                                    <a href="#">
-										<span class="icon red"><i class="icon-shopping-cart"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">6 hour</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">yesterday</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">yesterday</span> 
-                                    </a>
-                                </li>
-                                <li class="dropdown-menu-sub-footer">
-                            		<a>View all notifications</a>
-								</li>	
-							</ul>
-						</li>
-						<!-- start: Notifications Dropdown -->
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white tasks"></i>
-							</a>
-							<ul class="dropdown-menu tasks">
-								<li class="dropdown-menu-title">
- 									<span>You have 17 tasks in progress</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>
-								<li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">iOS Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim red">80</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">Android Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim green">47</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">ARM Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim yellow">32</div> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">ARM Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim greenLight">63</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">ARM Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim orange">80</div> 
-                                    </a>
-                                </li>
-								<li>
-                            		<a class="dropdown-menu-sub-footer">View all tasks</a>
-								</li>	
-							</ul>
-						</li>
-						<!-- end: Notifications Dropdown -->
-						<!-- start: Message Dropdown -->
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white envelope"></i>
-							</a>
-							<ul class="dropdown-menu messages">
-								<li class="dropdown-menu-title">
- 									<span>You have 9 messages</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>	
-                            	<li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	6 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	56 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	3 hours
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	yesterday
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	Jul 25, 2012
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-								<li>
-                            		<a class="dropdown-menu-sub-footer">View all messages</a>
-								</li>	
-							</ul>
-						</li>
-						<!-- end: Message Dropdown -->
-						<li>
-							<a class="btn" href="#">
-								<i class="halflings-icon white wrench"></i>
-							</a>
-						</li>
-						<!-- start: User Dropdown -->
-						<li class="dropdown">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white user"></i> Yanping Dong
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-menu-title">
- 									<span>Account Settings</span>
-								</li>
-								<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
-							</ul>
-						</li>
-						<!-- end: User Dropdown -->
-					</ul>
-				</div>
-				<!-- end: Header Menu -->
-				
+				<a class="brand" href="#/"><span>SpringCloudManager</span></a>
+
 			</div>
 		</div>
 	</div>
-	<!-- start: Header -->
+	<!-- end: Header -->
 	
 	<div class="container-fluid-full">
-	<div class="row-fluid">
+		<div class="row-fluid">
 
-		<!-- start: Main Menu -->
-		<div id="sidebar-left" class="span2">
-			<div class="nav-collapse sidebar-nav">
-				<ul class="nav nav-tabs nav-stacked main-menu">
-					<li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-					<li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>
-					<li><a href="micro-service.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> MicroService</span></a></li>
-					<li><a href="upload-service.html"><i class="icon-edit"></i><span class="hidden-tablet"> UploadService</span></a></li>
-					<!--<li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>-->
-					<!--<li><a href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>-->
-					<!--<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>-->
-				</ul>
-			</div>
-		</div>
-		<!-- end: Main Menu -->
-
-		<noscript>
-			<div class="alert alert-block span10">
-				<h4 class="alert-heading">Warning!</h4>
-				<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-			</div>
-		</noscript>
-
-		<!-- start: Content -->
-		<div id="content" class="span10">
-
-
-		<ul class="breadcrumb">
-			<li>
-				<i class="icon-home"></i>
-				<a href="index.html">Home</a>
-				<i class="icon-angle-right"></i>
-			</li>
-			<li><a href="#">Dashboard</a></li>
-		</ul>
-
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-					<dl class="dl-horizontal">
-						<dt>
-							Description lists
-						</dt>
-						<dd>
-							A description list is perfect for defining terms.
-						</dd>
-						<dt>
-							Euismod
-						</dt>
-						<dd>
-							Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-						</dd>
-						<dd>
-							Donec id elit non mi porta gravida at eget metus.
-						</dd>
-						<dt>
-							Malesuada porta
-						</dt>
-						<dd>
-							Etiam porta sem malesuada magna mollis euismod.
-						</dd>
-						<dt>
-							Felis euismod semper eget lacinia
-						</dt>
-						<dd>
-							Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						</dd>
-					</dl>
+			<!-- start: Main Menu -->
+			<div id="sidebar-left" class="span2">
+				<div class="nav-collapse sidebar-nav">
+					<ul class="nav nav-tabs nav-stacked main-menu">
+						<li><a ui-sref="dashboard" ><i class="icon-bar-chart"></i><span class="hidden-tablet"> dashboard</span></a></li>
+						<li><a ui-sref="microService"><i class="icon-align-justify"></i><span class="hidden-tablet"> MicroService</span></a></li>
+						<li><a ui-sref="uploadService"><i class="icon-edit"></i><span class="hidden-tablet"> UploadService</span></a></li>
+						<li><a ui-sref="messages"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>
+					</ul>
 				</div>
 			</div>
-		</div>
+			<!-- end: Main Menu -->
+
+			<noscript>
+				<div class="alert alert-block span10">
+					<h4 class="alert-heading">Warning!</h4>
+					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+				</div>
+			</noscript>
+
+			<!-- start: Content -->
+			<div id="content" class="span10">
+				<div ui-view></div>
+			</div> <!-- start: Content -->
+
+		</div><!--/.row-fluid-->
 
 
-
-		<div ng-app="index" ng-controller="indexCtrl" class="row-fluid hideInIE8 circleStats">
-
-			<!--<div class="span2" onTablet="span4" onDesktop="span2">-->
-				<!--<div class="circleStatsItemBox yellow">-->
-					<!--<div class="header">Disk Space Usage</div>-->
-					<!--<span class="percent">percent</span>-->
-					<!--<div class="circleStat">-->
-						<!--<input type="text" value="58" class="whiteCircle" />-->
-					<!--</div>-->
-					<!--<div class="footer">-->
-						<!--<span class="count">-->
-							<!--<span class="number">20000</span>-->
-							<!--<span class="unit">MB</span>-->
-						<!--</span>-->
-						<!--<span class="sep"> / </span>-->
-						<!--<span class="value">-->
-							<!--<span class="number">50000</span>-->
-							<!--<span class="unit">MB</span>-->
-						<!--</span>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</div>-->
-
-			<!--<div class="span2" onTablet="span4" onDesktop="span2">-->
-				<!--<div class="circleStatsItemBox green">-->
-					<!--<div class="header">Bandwidth</div>-->
-					<!--<span class="percent">percent</span>-->
-					<!--<div class="circleStat">-->
-						<!--<input type="text" value="78" class="whiteCircle" />-->
-					<!--</div>-->
-					<!--<div class="footer">-->
-						<!--<span class="count">-->
-							<!--<span class="number">5000</span>-->
-							<!--<span class="unit">GB</span>-->
-						<!--</span>-->
-						<!--<span class="sep"> / </span>-->
-						<!--<span class="value">-->
-							<!--<span class="number">5000</span>-->
-							<!--<span class="unit">GB</span>-->
-						<!--</span>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</div>-->
-
-			<!--<div class="span2 " onTablet="span4" onDesktop="span2">-->
-				<!--<div class="circleStatsItemBox pink">-->
-					<!--<div class="header">CPU</div>-->
-					<!--<span class="percent">percent</span>-->
-					<!--<div class="circleStat">-->
-						<!--<input type="text" value="83" class="whiteCircle" />-->
-					<!--</div>-->
-					<!--<div class="footer">-->
-						<!--<span class="count">-->
-							<!--<span class="number">64</span>-->
-							<!--<span class="unit">GHz</span>-->
-						<!--</span>-->
-						<!--<span class="sep"> / </span>-->
-						<!--<span class="value">-->
-							<!--<span class="number">3.2</span>-->
-							<!--<span class="unit">GHz</span>-->
-						<!--</span>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</div>-->
-
-			<!--<div class="span2" onTablet="span4" onDesktop="span2">-->
-				<!--<div class="circleStatsItemBox orange">-->
-					<!--<div class="header">Memory</div>-->
-					<!--<span class="percent">percent</span>-->
-					<!--<div class="circleStat">-->
-						<!--<input type="text" value="100" class="whiteCircle" />-->
-					<!--</div>-->
-					<!--<div class="footer">-->
-						<!--<span class="count">-->
-							<!--<span class="number">64</span>-->
-							<!--<span class="unit">GB</span>-->
-						<!--</span>-->
-						<!--<span class="sep"> / </span>-->
-						<!--<span class="value">-->
-							<!--<span class="number">64</span>-->
-							<!--<span class="unit">GB</span>-->
-						<!--</span>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</div>-->
-
-
-				<div class="sparkLineStats span3 widget pink" onTablet="span4" onDesktop="span3">
-                    <h3>CPU info</h3>
-                    <ul class="unstyled">
-                        <li><span class="sparkLineStats3"></span>
-                            uploadTime:
-                            <span class="number" ng-model="mem.rate">{{mem.rate}}</span>
-                        </li>
-                        <li><span class="sparkLineStats4"></span>
-                            cup cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats5"></span>
-                            cup cost::
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats6"></span>
-                            hard disk cost:
-							<span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats7"></span>
-                            web io cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                    </ul>
-					<div class="clearfix"></div>
-				</div><!-- End .sparkStats -->
-				<div class="sparkLineStats span3 widget green" onTablet="span4" onDesktop="span3">
-                    <h3>Memory info</h3>
-                    <ul class="unstyled">
-                        <li><span class="sparkLineStats3"></span>
-                            uploadTime:
-                            <span class="number">{{mem.rate}}</span>
-                        </li>
-                        <li><span class="sparkLineStats4"></span>
-                            cup cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats5"></span>
-                            cup cost::
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats6"></span>
-                            hard disk cost:
-							<span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats7"></span>
-                            web io cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                    </ul>
-					<div class="clearfix"></div>
-
-                </div><!-- End .sparkStats -->
-
-				<div class="sparkLineStats span3 widget orange" onTablet="span4" onDesktop="span3">
-                    <h3>Disk info</h3>
-                    <ul class="unstyled">
-                        <li><span class="sparkLineStats3"></span>
-                            uploadTime:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats4"></span>
-                            cup cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats5"></span>
-                            cup cost::
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats6"></span>
-                            hard disk cost:
-							<span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats7"></span>
-                            web io cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                    </ul>
-
-					<div class="clearfix"></div>
-
-                </div><!-- End .sparkStats -->
-
-				<div class="sparkLineStats span3 widget yellow" onTablet="span4" onDesktop="span3">
-                    <h3>WEB IO info</h3>
-                    <ul class="unstyled">
-                        <li><span class="sparkLineStats3"></span>
-                            uploadTime:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats4"></span>
-                            cup cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats5"></span>
-                            cup cost::
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats6"></span>
-                            hard disk cost:
-							<span class="number">{{mem.used}}</span>
-                        </li>
-                        <li><span class="sparkLineStats7"></span>
-                            web io cost:
-                            <span class="number">{{mem.used}}</span>
-                        </li>
-                    </ul>
-
-					<div class="clearfix"></div>
-
-                </div><!-- End .sparkStats -->
-
-		</div>
-
-
-		</div>
-
-</div><!--/.fluid-container-->
-
-		<!-- end: Content -->
-	</div><!--/#content.span10-->
-	</div><!--/fluid-row-->
+	</div><!--/container-fluid-full-->
 
 	
 	<div class="clearfix"></div>
@@ -684,8 +159,14 @@
         <script src="js/angular-1.4.7.js"></script>
 		<script src="js/angular-animate-1.4.7.js"></script>
 		<script src="js/ui-bootstrap-tpls-1.0.0.min.js"></script>
-		<script src="index.js"></script>
-	<!-- end: JavaScript-->
+		<script src="js/angular-route.min.js"></script>
+		<script src="js/angular-ui-router.min.js"></script>
+		<script src="app.js"></script>
+	    <script src="controller/dashboardCtrl.js"></script>
+		<script src="controller/messagesCtrl.js"></script>
+		<script src="controller/micro-serviceCtrl.js"></script>
+		<script src="controller/upload-serviceCtrl.js"></script>
+		<!-- end: JavaScript-->
 	
 </body>
 </html>
