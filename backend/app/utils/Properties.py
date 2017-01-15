@@ -5,7 +5,6 @@
 import re
 import os
 import tempfile
-from config import GlobalVar
 
 
 class Properties:
@@ -38,7 +37,7 @@ class Properties:
         replace_property(self.file_name, key + '=.*', key + '=' + value, True)
 
 
-def parse(file_name):
+def parseProperties(file_name):
     return Properties(file_name)
 
 
@@ -71,10 +70,3 @@ def replace_property(file_name, from_regex, to_str, append_on_not_exists=True):
         file.close()  #关闭临时文件，同时也会自动删掉临时文件
     else:
         print ("file %s not found" % file_name)
-
-if __name__ == '__main__':
-    p = Properties(GlobalVar.BASE_DIR+'/config.properties')
-
-    if(p.has_key('host')):
-        properties = p.get('host')
-        print(properties)
