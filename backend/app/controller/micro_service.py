@@ -30,7 +30,7 @@ def upload():
             return Response({"message":"please select a file to upload"},mimetype="application/json")
         fname = secure_filename(f.filename) #获取一个安全的文件名，且仅仅支持ascii字符；
         name=request.form.get("name")
-        print name
+        print(name)
         if name =='':
             return Response({"message": "please input the userId"},mimetype="application/json")
         serviceId=fname+"_"+time.strftime("%Y%m%d%H%M%S",time.localtime())

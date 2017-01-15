@@ -26,7 +26,7 @@ def query_db(query, args=(), one=False):
 
 def add_user(id,name, password, email,phone):
 	sql = "INSERT INTO USER (id,name, password, email,phone) VALUES(%d, '%s', '%s','%s','%s')" %(id,name, password,email,phone)
-	print sql
+	print(sql)
 	db = get_db()
 	db.execute(sql)
 	res = db.commit()
@@ -34,7 +34,7 @@ def add_user(id,name, password, email,phone):
 
 def find_student(name=''):
 	sql = "select * from students where name = '%s' limit 1" %(name)
-	print sql
+	print(sql)
 	db = get_db()
 	rv = db.execute(sql)
 	res = rv.fetchall()

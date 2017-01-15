@@ -15,7 +15,7 @@ UPLOAD_FOLDER = os.path.join(GlobalVar.BASE_DIR, 'static/uploads')
 @app.route('/message/get', methods=['GET'])
 def message_get():
         messages = file.read_from_txt(UPLOAD_FOLDER+'/message.txt')
-        print messages
+        print(messages)
 
         return jsonify({'messages':messages})
 

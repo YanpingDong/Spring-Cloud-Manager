@@ -39,7 +39,7 @@ def execute_by_privatekey(private_key,commands):
     # 执行命令
     stdin, stdout, stderr = ssh.exec_command(commands)
     # 获取命令结果
-    print stdout.read()
+    print(stdout.read())
     # 关闭连接
     ssh.close()
 

@@ -21,11 +21,11 @@ def top():
     [summary,items]=top_result.split("\n\n")
     [top,tasks,cpu,mem,swap]=summary.split("\n")
 
-    print tasks
-    print cpu
-    print mem
-    print swap
-    print items
+    print(tasks)
+    print(cpu)
+    print(mem)
+    print(swap)
+    print(items)
 
     response={}
     response['loadAverage']=top.split(",  ")[-1].split(":")[-1]

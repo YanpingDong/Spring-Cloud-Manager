@@ -1,7 +1,7 @@
 import sqlite3
 
 conn = sqlite3.connect('test.db')
-print "Opened database successfully";
+print("Opened database successfully");
 
 conn.execute('''DROP TABLE IF EXISTS  USER;''')
 conn.execute('''DROP TABLE IF EXISTS SERVICE_INFO;''')
@@ -14,7 +14,7 @@ conn.execute('''CREATE TABLE USER
        PASSWORD           TEXT    NOT NULL,
        EMAIL            TEXT     NOT NULL,
        PHONE        TEXT);''')
-print "USER Table created successfully";
+print("USER Table created successfully");
 
 conn.execute('''CREATE TABLE SERVICE_INFO
        (ID INTEGER PRIMARY KEY autoincrement,
@@ -22,7 +22,7 @@ conn.execute('''CREATE TABLE SERVICE_INFO
        DESCRIPTION           TEXT    NOT NULL,
        UPLOAD_TIME            TEXT     NOT NULL,
        PHONE        TEXT);''')
-print "SERVICE_INFO Table created successfully";
+print("SERVICE_INFO Table created successfully");
 
 conn.execute('''CREATE TABLE MESSAGE
        (ID INTEGER PRIMARY KEY autoincrement,
@@ -30,6 +30,6 @@ conn.execute('''CREATE TABLE MESSAGE
        DESCRIPTION           TEXT    NOT NULL,
        UPDATE_TIME            TEXT     NOT NULL,
        TOPIC        TEXT    NOT NULL);''')
-print "MESSAGE Table created successfully";
+print("MESSAGE Table created successfully");
 
 conn.close()
